@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Got Pets?</title>
+
+	<link rel="stylesheet" href="css/main.css"> <!-- includes bootstrap -->
+
+  <!-- load angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body class="container" ng-app="PetApp" ng-controller="PetCtrl">
+
+	<h1>Have you lost a pet?</h1>
+	<!-- <p class="lead">Movies released during 2014</p> -->
+	<p>Search: <input type="text" ng-model="query" class="form-control"></p>
+
+	<table class="table">
+		<tr>
+			<th><a href="" ng-click="sortBy = 'animal_type'">Animal Type</a></th>
+			<th><a href="" ng-click="sortBy = 'animal_breed'">Animal Breed</a></th>
+			<th><a href="" ng-click="sortBy = 'animal_gender'">Animal Gender</a></th>
+			<th><a href="" ng-click="sortBy = 'age'">Animal Age</a></th>
+			<th><a href="" ng-click="sortBy = 'current_location'">Current Location</a></th>
+			<th><a href="" ng-click="sortBy = 'date'">Date found</a></th>
+			<th></th>
+		</tr>
+		<tr ng-repeat="pet in pets | orderBy:sortBy | filter:query">
+			<td>{{pet.animal_type}}</td>
+			<td>{{pet.animal_breed}}</td>
+			<td>{{pet.animal_gender}}</td>
+			<td>{{pet.age}}</td>
+			<td>{{pet.current_location}}</td>
+			<td>{{pet.date | date: "MMM dd yyyy"}}</td>
+			<td><a href={{pet.link}}><button>More Info</button></a></td>
+		</tr>
+	</table>
+
+	<!-- load our script -->
+	<script src="js/pets.js"></script>
+
+</body>
+</html>
