@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TITLE</title>
+
+	<link rel="stylesheet" href="css/main.css"> <!-- includes bootstrap -->
+
+  <!-- load angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+</head>
+<body class="container" ng-app="PetApp" ng-controller="PetCtrl">
+
+	<h1>HEADER</h1>
+
+	<p>Search: <input type="text" ng-model="query" class="form-control"></p>
+
+	<table class="table">
+		<tr>
+		</tr>
+		<tr>
+		</tr>
+	</table>
+
+	<!-- load our script -->
+	<script src="js/pets.js"></script>
+
+</body>
+</html>
